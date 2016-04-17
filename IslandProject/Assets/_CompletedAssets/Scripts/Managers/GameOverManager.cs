@@ -19,6 +19,7 @@ namespace CompleteProject
 
         void Update ()
         {
+            //anim.SetTrigger("GameOver");
             // If the player has run out of health...
             if(playerHealth.currentHealth <= 0)
             {

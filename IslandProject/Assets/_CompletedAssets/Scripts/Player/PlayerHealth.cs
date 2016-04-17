@@ -80,7 +80,7 @@ namespace CompleteProject
         }
 
 
-        void Death ()
+        public void Death()
         {
             // Set the death flag so this function won't be called again.
             isDead = true;
@@ -105,6 +105,15 @@ namespace CompleteProject
         {
             // Reload the level that is currently loaded.
             SceneManager.LoadScene (0);
+        }
+
+        void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.name == "Water")
+            {
+                currentHealth = 0;
+                Death();
+            }
         }
     }
 }

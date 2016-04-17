@@ -103,6 +103,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\NoiseBrush\Scripts\Editor\Layout.cs" />
+    <Compile Include="Assets\NoiseBrush\Scripts\Editor\NoiseBrushEditor.cs" />
     <Compile Include="Assets\_CompletedAssets\MobileInput\Scripts\Editor\CrossPlatformInputInitialize.cs" />
     <Compile Include="Assets\_CompletedAssets\SampleAssets\Effects\ImageEffects\Editor\ColorCorrectionCurvesEditor.cs" />
     <Compile Include="Assets\_CompletedAssets\SampleAssets\Effects\ImageEffects\Editor\VignetteAndChromaticAberrationEditor.cs" />

@@ -72,6 +72,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\NoiseBrush\NoiseBrush.cs" />
+    <Compile Include="Assets\NoiseBrush\Scripts\Matrix.cs" />
+    <Compile Include="Assets\NoiseBrush\Scripts\Noise.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />
