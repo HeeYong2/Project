@@ -113,5 +113,6 @@
   - 3.기획서 -> 구현 아이디어
   - 1. 교수님들 검토 
   - Unity3D 최신 버전으로 업데이트 (5.3.4f1)
+  - Library Directory GitHub에서 퇴출.
 
 
