@@ -75,11 +75,18 @@
     <Compile Include="Assets\NoiseBrush\NoiseBrush.cs" />
     <Compile Include="Assets\NoiseBrush\Scripts\Matrix.cs" />
     <Compile Include="Assets\NoiseBrush\Scripts\Noise.cs" />
+    <Compile Include="Assets\Scripts\Audio\MixLevels.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />
+    <Compile Include="Assets\Scripts\Helpers\BeautyShot.cs" />
+    <Compile Include="Assets\Scripts\Helpers\RandomAnimationPoint.cs" />
+    <Compile Include="Assets\Scripts\Helpers\RandomParticlePoint.cs" />
+    <Compile Include="Assets\Scripts\Helpers\VolumeHandler.cs" />
     <Compile Include="Assets\Scripts\Managers\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameOverManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\PauseManager.cs" />
     <Compile Include="Assets\Scripts\Managers\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
@@ -96,22 +103,6 @@
     <Compile Include="Assets\_CompletedAssets\SampleAssets\Effects\ImageEffects\Scripts\ScreenSpaceAmbientOcclusion.cs" />
     <Compile Include="Assets\_CompletedAssets\SampleAssets\Effects\ImageEffects\Scripts\TiltShift.cs" />
     <Compile Include="Assets\_CompletedAssets\SampleAssets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
-    <Compile Include="Assets\_CompletedAssets\Scripts\Audio\MixLevels.cs" />
-    <Compile Include="Assets\_CompletedAssets\Scripts\Camera\CameraFollow.cs" />
-    <Compile Include="Assets\_CompletedAssets\Scripts\Enemy\EnemyAttack.cs" />
-    <Compile Include="Assets\_CompletedAssets\Scripts\Enemy\EnemyHealth.cs" />
-    <Compile Include="Assets\_CompletedAssets\Scripts\Enemy\EnemyMovement.cs" />
-    <Compile Include="Assets\_CompletedAssets\Scripts\Helpers\BeautyShot.cs" />
-    <Compile Include="Assets\_CompletedAssets\Scripts\Helpers\RandomAnimationPoint.cs" />
-    <Compile Include="Assets\_CompletedAssets\Scripts\Helpers\RandomParticlePoint.cs" />
-    <Compile Include="Assets\_CompletedAssets\Scripts\Helpers\VolumeHandler.cs" />
-    <Compile Include="Assets\_CompletedAssets\Scripts\Managers\EnemyManager.cs" />
-    <Compile Include="Assets\_CompletedAssets\Scripts\Managers\GameOverManager.cs" />
-    <Compile Include="Assets\_CompletedAssets\Scripts\Managers\PauseManager.cs" />
-    <Compile Include="Assets\_CompletedAssets\Scripts\Managers\ScoreManager.cs" />
-    <Compile Include="Assets\_CompletedAssets\Scripts\Player\PlayerHealth.cs" />
-    <Compile Include="Assets\_CompletedAssets\Scripts\Player\PlayerMovement.cs" />
-    <Compile Include="Assets\_CompletedAssets\Scripts\Player\PlayerShooting.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fonts\LuckiestGuy\LICENSE.txt" />

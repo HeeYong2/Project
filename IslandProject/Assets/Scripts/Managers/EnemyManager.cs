@@ -1,28 +1,100 @@
 ﻿using UnityEngine;
 
-public class EnemyManager : MonoBehaviour
+namespace CompleteProject
 {
-    public PlayerHealth playerHealth;
-    public GameObject enemy;
-    public float spawnTime = 3f;
-    public Transform[] spawnPoints;
-
-
-    void Start ()
+    public class EnemyManager : MonoBehaviour
     {
-        InvokeRepeating ("Spawn", spawnTime, spawnTime);
-    }
+        Transform player;
+        public PlayerHealth playerHealth;       // Reference to the player's heatlh.
+        public GameObject enemy;                // The enemy prefab to be spawned.
+        public float spawnTime = 10f;            // How long between each spawn.
 
-
-    void Spawn ()
-    {
-        if(playerHealth.currentHealth <= 0f)
+        public int Max_Obj_Cnt;
+        public static int[] Obj_Cnt = new int[3];
+        void Start ()
         {
-            return;
+            for (int i = 0; i < 3; i++)
+            {
+                Obj_Cnt[i] = 0; 
+            }
+           
+            switch (enemy.name)
+            {
+                case "ZomBunny":
+                    Max_Obj_Cnt = 10;
+                    break;
+                case "ZomBear":
+                    Max_Obj_Cnt = 8;
+                    break;
+                case "Hellephant":
+                    Max_Obj_Cnt = 2;
+                    break;
+            }
+
+
+            player = GameObject.Find("Player").transform;
+            // Call the Spawn function after a delay of the spawnTime and then continue to call after the same amount of time.
+            InvokeRepeating ("Spawn", spawnTime, spawnTime);
+
+
+
         }
 
-        int spawnPointIndex = Random.Range (0, spawnPoints.Length);
 
-        Instantiate (enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+        void Spawn ()
+        {
+            // If the player has no health left...
+            if(playerHealth.currentHealth <= 0f)
+            {
+                // ... exit the function.
+                return;
+            }
+       
+                int rand_x = Random.Range(0, 2);
+                int rand_z = Random.Range(0, 2);
+                 float temp_x = 0;
+                float temp_z = 0;
+                if(rand_x ==0)
+                    temp_x = Random.Range(10, 21);
+                else
+                    temp_x = Random.Range(-10, -21);
+
+                if (rand_z == 0)
+                    temp_z = Random.Range(10, 21);
+                else
+                    temp_z = Random.Range(-10, -21);
+
+                switch (enemy.name)
+                {
+                    case "ZomBunny":
+
+                        if (Obj_Cnt[0] <= Max_Obj_Cnt)
+                        {
+                            Obj_Cnt[0]++;
+                            Instantiate(enemy, new Vector3(player.position.x + temp_x, player.position.y, player.position.z + temp_z), player.rotation);
+                        }
+                        break;
+                    case "ZomBear":
+                        if (Obj_Cnt[1] <= Max_Obj_Cnt)
+                        {
+                            Obj_Cnt[1]++;
+                            Instantiate(enemy, new Vector3(player.position.x + temp_x, player.position.y, player.position.z + temp_z), player.rotation);
+                        }
+                        break;
+                    case "Hellephant":
+                        if (Obj_Cnt[2] <= Max_Obj_Cnt)
+                        {
+                            Obj_Cnt[2]++;
+                            Instantiate(enemy, new Vector3(player.position.x + temp_x, player.position.y, player.position.z + temp_z), player.rotation);
+                        }
+                        break;
+                }
+
+
+            // Find a random index between zero and one less than the number of spawn points.
+
+            // Create an instance of the enemy prefab at the randomly selected spawn point's position and rotation.
+            //
+        }
     }
 }
