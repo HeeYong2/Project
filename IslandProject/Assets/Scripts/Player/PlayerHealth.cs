@@ -7,6 +7,8 @@ namespace CompleteProject
 {
     public class PlayerHealth : MonoBehaviour
     {
+        public enum PlayState { Play, Clear };
+
         public int startingHealth = 100;                            // The amount of health the player starts the game with.
         public int currentHealth;                                   // The current health the player has.
         public Slider healthSlider;                                 // Reference to the UI's health bar.
@@ -24,8 +26,13 @@ namespace CompleteProject
         bool damaged;                                               // True when the player gets damaged.
 
 
+        public bool Clear = false;
+
+        public PlayState ps;
         void Awake ()
         {
+            Clear = false;
+            ps = PlayState.Play;
             // Setting up the references.
             anim = GetComponent <Animator> ();
             playerAudio = GetComponent <AudioSource> ();
@@ -39,21 +46,32 @@ namespace CompleteProject
 
         void Update ()
         {
-            // If the player has just been damaged...
-            if(damaged)
+            if (ps.Equals(PlayState.Play))
             {
-                // ... set the colour of the damageImage to the flash colour.
-                damageImage.color = flashColour;
+                // If the player has just been damaged...
+                if (damaged)
+                {
+                    // ... set the colour of the damageImage to the flash colour.
+                    damageImage.color = flashColour;
+                }
+                // Otherwise...
+                else
+                {
+                    // ... transition the colour back to clear.
+                    damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+                }
+
+                // Reset the damaged flag.
+                damaged = false;
             }
-            // Otherwise...
             else
             {
-                // ... transition the colour back to clear.
-                damageImage.color = Color.Lerp (damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    SceneManager.LoadScene(0);
+                }
             }
-
-            // Reset the damaged flag.
-            damaged = false;
+           
         }
 
 
@@ -109,6 +127,11 @@ namespace CompleteProject
 
         void OnCollisionEnter(Collision collision)
         {
+            if (collision.gameObject.name == "Boat")
+            {
+                Clear = true;
+                ps = PlayState.Clear;
+            }
             if (collision.gameObject.name == "Water")
             {
                 currentHealth = 0;

@@ -16,6 +16,7 @@ namespace CompleteProject
         float camRayLength = 100f;          // The length of the ray from the camera into the scene.
 #endif
 
+        public PlayerHealth ph;
         void Awake ()
         {
 #if !MOBILE_INPUT
@@ -26,28 +27,33 @@ namespace CompleteProject
             anim = GetComponent <Animator> ();
             playerRigidbody = GetComponent <Rigidbody> ();
             speed = 5;
+            ph = GetComponent<PlayerHealth>();
         }
        
 
         void FixedUpdate ()
         {
-            // Store the input axes.
-            float h = CrossPlatformInputManager.GetAxisRaw("Horizontal");
-            float v = CrossPlatformInputManager.GetAxisRaw("Vertical");
-
-            //움직임
-            this.transform.Translate(new Vector3(h, 0, v) * speed * Time.deltaTime);
-
-            // Turn the player to face the mouse cursor.
-            Turning ();
-
-            // Animate the player.
-            Animating (h, v);
-
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (ph.ps.Equals(PlayerHealth.PlayState.Play))
             {
-                playerRigidbody.velocity = new Vector3(0, 10, 0);
+                float h = CrossPlatformInputManager.GetAxisRaw("Horizontal");
+                float v = CrossPlatformInputManager.GetAxisRaw("Vertical");
+
+                //움직임
+                this.transform.Translate(new Vector3(h, 0, v) * speed * Time.deltaTime);
+
+                // Turn the player to face the mouse cursor.
+                Turning();
+
+                // Animate the player.
+                Animating(h, v);
+
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    playerRigidbody.velocity = new Vector3(0, 10, 0);
+                }
             }
+            // Store the input axes.
+           
         }
 
 

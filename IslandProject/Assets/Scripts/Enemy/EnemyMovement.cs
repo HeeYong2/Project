@@ -64,45 +64,46 @@ namespace CompleteProject
 
         void Update()
         {
-
-            switch (Enemy_s)
+            if (playerHealth.ps.Equals(PlayerHealth.PlayState.Play))
             {
-                case Enemy_State.Idle:
+                switch (Enemy_s)
+                {
+                    case Enemy_State.Idle:
 
-                    if (this_trs.position.x == temp_Vector.x && this_trs.position.z == temp_Vector.z)
-                    {
-                        temp_Vector = new Vector3(this_trs.position.x + Random.Range(-Range, Range), this_trs.position.y, this_trs.position.z + Random.Range(-Range, Range));
-                    }
-                    else
-                    {
-                        if (nav.enabled)
-                            nav.SetDestination(temp_Vector);
-                        Move_cnt += Time.deltaTime;
-
-                        if (Move_cnt >= 5)
+                        if (this_trs.position.x == temp_Vector.x && this_trs.position.z == temp_Vector.z)
                         {
                             temp_Vector = new Vector3(this_trs.position.x + Random.Range(-Range, Range), this_trs.position.y, this_trs.position.z + Random.Range(-Range, Range));
                         }
-                    }
+                        else
+                        {
+                            if (nav.enabled)
+                                nav.SetDestination(temp_Vector);
+                            Move_cnt += Time.deltaTime;
 
-                    
-                    break;
-                case Enemy_State.chase:
-                    if (nav.enabled)
-                        nav.SetDestination(player.position);
-                    break;
-                case Enemy_State.Berserker :
-                    if (nav.enabled)
-                        nav.SetDestination(player.position);
-                    nav.speed = speed * 2;
-                    break;
-                case Enemy_State.Dead:
-                    
-                    nav.enabled = false;
-                    break;
+                            if (Move_cnt >= 5)
+                            {
+                                temp_Vector = new Vector3(this_trs.position.x + Random.Range(-Range, Range), this_trs.position.y, this_trs.position.z + Random.Range(-Range, Range));
+                            }
+                        }
 
+
+                        break;
+                    case Enemy_State.chase:
+                        if (nav.enabled)
+                            nav.SetDestination(player.position);
+                        break;
+                    case Enemy_State.Berserker:
+                        if (nav.enabled)
+                            nav.SetDestination(player.position);
+                        nav.speed = speed * 2;
+                        break;
+                    case Enemy_State.Dead:
+
+                        nav.enabled = false;
+                        break;
+
+                }
             }
-
          
         }
 
@@ -123,6 +124,7 @@ namespace CompleteProject
                 if (enemyHealth.currentHealth <= enemyHealth.startingHealth * 0.5f)
                 {
                     Enemy_s = Enemy_State.Berserker;
+                    this_trs.localScale = Vector3.one * 2;
                 }
                 else if (enemyHealth.currentHealth != enemyHealth.startingHealth)
                 {

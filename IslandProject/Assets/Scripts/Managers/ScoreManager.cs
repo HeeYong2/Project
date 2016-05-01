@@ -8,9 +8,7 @@ namespace CompleteProject
     {
         public static int score;        // The player's score.
 
-
         Text text;                      // Reference to the Text component.
-
 
         void Awake ()
         {
@@ -22,7 +20,7 @@ namespace CompleteProject
         }
 
 
-        void Update ()
+        void LateUpdate ()
         {
             // Set the displayed text to be the word "Score" followed by the score value.
             text.text = "Score: " + score;

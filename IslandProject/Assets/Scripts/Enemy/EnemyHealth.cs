@@ -53,7 +53,7 @@ namespace CompleteProject
             currentHealth = startingHealth;
 
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, Vector3.down, out hit, 5))
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, 10))
             {
                 if (hit.collider.gameObject.name == "Water")
                 {

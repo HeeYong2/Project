@@ -17,7 +17,7 @@ namespace CompleteProject
         }
 
 
-        void Update ()
+        void LateUpdate ()
         {
             //anim.SetTrigger("GameOver");
             // If the player has run out of health...
@@ -25,6 +25,10 @@ namespace CompleteProject
             {
                 // ... tell the animator the game is over.
                 anim.SetTrigger("GameOver");
+            }
+            if (playerHealth.Clear)
+            {
+                anim.SetTrigger("Clear");
             }
         }
     }
