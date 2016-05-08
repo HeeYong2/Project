@@ -57,6 +57,10 @@ namespace CompleteProject
                 case "Hellephant(Clone)":
                     Range = 10;
                     break;
+                case "FirstAid(Clone)":
+                    Range = 0;
+                    break;
+
             }
             
         }
@@ -159,6 +163,9 @@ namespace CompleteProject
                                 break;
                             case "Hellephant(Clone)":
                                 EnemyManager.Obj_Cnt[2]--;
+                                break;
+                            case "FirstAid(Clone)":
+                                EnemyManager.Obj_Cnt[3]--;
                                 break;
                         }
                         Destroy(this.gameObject);

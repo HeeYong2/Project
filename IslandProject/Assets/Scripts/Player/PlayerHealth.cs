@@ -29,22 +29,28 @@ namespace CompleteProject
         public bool Clear = false;
 
         public PlayState ps;
-        void Awake ()
+
+        public GameObject Damage;
+        TextMesh Damage_text;
+        void Awake()
         {
+            Damage = Resources.Load("Damage_Text") as GameObject;
+            Damage_text = Damage.GetComponent<TextMesh>();
+
             Clear = false;
             ps = PlayState.Play;
             // Setting up the references.
-            anim = GetComponent <Animator> ();
-            playerAudio = GetComponent <AudioSource> ();
-            playerMovement = GetComponent <PlayerMovement> ();
-            playerShooting = GetComponentInChildren <PlayerShooting> ();
+            anim = GetComponent<Animator>();
+            playerAudio = GetComponent<AudioSource>();
+            playerMovement = GetComponent<PlayerMovement>();
+            playerShooting = GetComponentInChildren<PlayerShooting>();
 
             // Set the initial health of the player.
             currentHealth = startingHealth;
         }
 
 
-        void Update ()
+        void Update()
         {
             if (ps.Equals(PlayState.Play))
             {
@@ -71,15 +77,23 @@ namespace CompleteProject
                     SceneManager.LoadScene(0);
                 }
             }
-           
+
         }
 
 
-        public void TakeDamage (int amount)
+        public void TakeDamage(int amount)
         {
             // Set the damaged flag so the screen will flash.
+            Damage_text.color = Color.blue;
+
             damaged = true;
 
+
+            GameObject obj = Instantiate(Damage);
+            obj.transform.position = this.transform.position;
+
+            StartCoroutine(TextDestoy(obj));
+            Damage_text.text = amount.ToString();
             // Reduce the current health by the damage amount.
             currentHealth -= amount;
 
@@ -87,16 +101,22 @@ namespace CompleteProject
             healthSlider.value = currentHealth;
 
             // Play the hurt sound effect.
-            playerAudio.Play ();
+            playerAudio.Play();
 
             // If the player has lost all it's health and the death flag hasn't been set yet...
-            if(currentHealth <= 0 && !isDead)
+            if (currentHealth <= 0 && !isDead)
             {
                 // ... it should die.
-                Death ();
+                Death();
             }
         }
+        IEnumerator TextDestoy(GameObject obj)
+        {
 
+
+            yield return new WaitForSeconds(0.15f);
+            Destroy(obj);
+        }
 
         public void Death()
         {
@@ -104,14 +124,14 @@ namespace CompleteProject
             isDead = true;
 
             // Turn off any remaining shooting effects.
-            playerShooting.DisableEffects ();
+            playerShooting.DisableEffects();
 
             // Tell the animator that the player is dead.
-            anim.SetTrigger ("Die");
+            anim.SetTrigger("Die");
 
             // Set the audiosource to play the death clip and play it (this will stop the hurt sound from playing).
             playerAudio.clip = deathClip;
-            playerAudio.Play ();
+            playerAudio.Play();
 
             // Turn off the movement and shooting scripts.
             playerMovement.enabled = false;
@@ -119,24 +139,37 @@ namespace CompleteProject
         }
 
 
-        public void RestartLevel ()
+
+        public void RestartLevel()
         {
             // Reload the level that is currently loaded.
-            SceneManager.LoadScene (0);
+            SceneManager.LoadScene(0);
         }
 
         void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.name == "Boat")
+            if (ps == PlayState.Play)
             {
-                Clear = true;
-                ps = PlayState.Clear;
+                if (collision.gameObject.name == "Boat")
+                {
+                    Clear = true;
+                    ps = PlayState.Clear;
+                }
+                if (collision.gameObject.name == "Water")
+                {
+                    currentHealth = 0;
+                    Death();
+                }
+                if (collision.gameObject.name == "FirstAid(Clone)")
+                {
+                    GameObject.Find("Health_KitManager").GetComponent<AudioSource>().Play();
+                    currentHealth = startingHealth;
+                    EnemyManager.Obj_Cnt[3]--;
+                    healthSlider.value = currentHealth;
+                    Destroy(collision.gameObject);
+                }
             }
-            if (collision.gameObject.name == "Water")
-            {
-                currentHealth = 0;
-                Death();
-            }
+
         }
     }
 }

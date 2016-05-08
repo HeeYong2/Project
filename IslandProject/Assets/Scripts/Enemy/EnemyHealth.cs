@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections;
+
 
 namespace CompleteProject
 {
@@ -18,28 +20,30 @@ namespace CompleteProject
         bool isDead;                                // Whether the enemy is dead.
         bool isSinking;                             // Whether the enemy has started sinking through the floor.
 
-        NavMeshAgent nav; 
+        NavMeshAgent nav;
 
-        void Awake ()
+        public GameObject Damage;
+        TextMesh Damage_text;
+        void Awake()
         {
-
-
+            Damage = Resources.Load("Damage_Text") as GameObject;
+            Damage_text = Damage.GetComponent<TextMesh>();
 
 
             nav = GetComponent<NavMeshAgent>();
 
             // Setting up the references.
-            anim = GetComponent <Animator> ();
-            enemyAudio = GetComponent <AudioSource> ();
-            hitParticles = GetComponentInChildren <ParticleSystem> ();
-            capsuleCollider = GetComponent <CapsuleCollider> ();
+            anim = GetComponent<Animator>();
+            enemyAudio = GetComponent<AudioSource>();
+            hitParticles = GetComponentInChildren<ParticleSystem>();
+            capsuleCollider = GetComponent<CapsuleCollider>();
 
 
             switch (this.gameObject.name)
             {
                 case "ZomBunny(Clone)":
                     startingHealth = 100;
-                    
+
                     break;
                 case "ZomBear(Clone)":
                     startingHealth = 200;
@@ -77,30 +81,38 @@ namespace CompleteProject
         }
 
 
-        void Update ()
+        void Update()
         {
             // If the enemy should be sinking...
-            if(isSinking)
+            if (isSinking)
             {
                 // ... move the enemy down by the sinkSpeed per second.
-                transform.Translate (-Vector3.up * sinkSpeed * Time.deltaTime);
+                transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
             }
         }
 
 
-        public void TakeDamage (int amount, Vector3 hitPoint)
+        public void TakeDamage(int amount, Vector3 hitPoint)
         {
             // If the enemy is dead...
-            if(isDead)
+            Damage_text.color = Color.red;
+
+            if (isDead)
                 // ... no need to take damage so exit the function.
                 return;
 
+            GameObject obj = Instantiate(Damage);
+            obj.transform.position = this.transform.position;
+
+            StartCoroutine(TextDestoy(obj));
+
+            Damage_text.text = amount.ToString();
             // Play the hurt sound effect.
-            enemyAudio.Play ();
+            enemyAudio.Play();
 
             // Reduce the current health by the amount of damage sustained.
             currentHealth -= amount;
-            
+
             // Set the position of the particle system to where the hit was sustained.
             hitParticles.transform.position = hitPoint;
 
@@ -108,15 +120,22 @@ namespace CompleteProject
             hitParticles.Play();
 
             // If the current health is less than or equal to zero...
-            if(currentHealth <= 0)
+            if (currentHealth <= 0)
             {
                 // ... the enemy is dead.
-                Death ();
+                Death();
             }
         }
 
+        IEnumerator TextDestoy(GameObject obj)
+        {
 
-        void Death ()
+
+            yield return new WaitForSeconds(0.15f);
+            Destroy(obj);
+        }
+
+        void Death()
         {
             // The enemy is dead.
             isDead = true;
@@ -136,21 +155,21 @@ namespace CompleteProject
                     break;
             }
             // Tell the animator that the enemy is dead.
-            anim.SetTrigger ("Dead");
+            anim.SetTrigger("Dead");
 
             // Change the audio clip of the audio source to the death clip and play it (this will stop the hurt clip playing).
             enemyAudio.clip = deathClip;
-            enemyAudio.Play ();
+            enemyAudio.Play();
         }
 
 
-        public void StartSinking ()
+        public void StartSinking()
         {
             // Find and disable the Nav Mesh Agent.
-            GetComponent <NavMeshAgent> ().enabled = false;
+            GetComponent<NavMeshAgent>().enabled = false;
 
             // Find the rigidbody component and make it kinematic (since we use Translate to sink the enemy).
-            GetComponent <Rigidbody> ().isKinematic = true;
+            GetComponent<Rigidbody>().isKinematic = true;
 
             // The enemy should no sink.
             isSinking = true;
@@ -159,7 +178,7 @@ namespace CompleteProject
             ScoreManager.score += scoreValue;
 
             // After 2 seconds destory the enemy.
-            Destroy (gameObject, 2f);
+            Destroy(gameObject, 2f);
         }
 
 

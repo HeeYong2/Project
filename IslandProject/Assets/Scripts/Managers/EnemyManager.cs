@@ -10,10 +10,10 @@ namespace CompleteProject
         public float spawnTime = 10f;            // How long between each spawn.
 
         public int Max_Obj_Cnt;
-        public static int[] Obj_Cnt = new int[3];
+        public static int[] Obj_Cnt = new int[4];
         void Start ()
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 4; i++)
             {
                 Obj_Cnt[i] = 0; 
             }
@@ -28,6 +28,9 @@ namespace CompleteProject
                     break;
                 case "Hellephant":
                     Max_Obj_Cnt = 2;
+                    break;
+                case "FirstAid":
+                    Max_Obj_Cnt = 3;
                     break;
             }
 
@@ -85,6 +88,13 @@ namespace CompleteProject
                         if (Obj_Cnt[2] <= Max_Obj_Cnt)
                         {
                             Obj_Cnt[2]++;
+                            Instantiate(enemy, new Vector3(player.position.x + temp_x, player.position.y, player.position.z + temp_z), player.rotation);
+                        }
+                        break;
+                    case "FirstAid":
+                        if (Obj_Cnt[3] <= Max_Obj_Cnt)
+                        {
+                            Obj_Cnt[3]++;
                             Instantiate(enemy, new Vector3(player.position.x + temp_x, player.position.y, player.position.z + temp_z), player.rotation);
                         }
                         break;

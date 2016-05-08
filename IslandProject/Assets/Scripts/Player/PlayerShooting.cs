@@ -21,9 +21,13 @@ namespace CompleteProject
 		public Light faceLight;								// Duh
         float effectsDisplayTime = 0.2f;                // The proportion of the timeBetweenBullets that the effects will display for.
 
+        public static int MAX_SHOT = 30;
+        public static int SHOT = 30;
 
+        public static float Recharge;
         void Awake ()
         {
+            SHOT = 30;
             // Create a layer mask for the Shootable layer.
             shootableMask = LayerMask.GetMask ("Shootable");
 
@@ -35,7 +39,6 @@ namespace CompleteProject
 			//faceLight = GetComponentInChildren<Light> ();
         }
 
-
         void Update ()
         {
             // Add the time since Update was last called to the timer.
@@ -43,11 +46,26 @@ namespace CompleteProject
 
 #if !MOBILE_INPUT
             // If the Fire1 button is being press and it's time to fire...
-			if(Input.GetButton ("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0)
+
+            if (Recharge >= 0)
             {
-                // ... shoot the gun.
-                Shoot ();
+                Recharge -= Time.deltaTime;
+
+                if (Recharge >= 0)
+                {
+                    SHOT = MAX_SHOT;
+                }
             }
+            if (SHOT > 0 && Recharge <= 0)
+            {
+                if (Input.GetButton("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0)
+                {
+                    // ... shoot the gun.
+                    Shoot();
+                    SHOT--;
+                }
+            }
+			
 #else
             // If there is input on the shoot direction stick and it's time to fire...
             if ((CrossPlatformInputManager.GetAxisRaw("Mouse X") != 0 || CrossPlatformInputManager.GetAxisRaw("Mouse Y") != 0) && timer >= timeBetweenBullets)

@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerShooting.cs" />
+     <Compile Include="Assets\ShotManger.cs" />
      <Compile Include="Assets\_CompletedAssets\MobileInput\Scripts\CrossPlatformInputManager.cs" />
      <Compile Include="Assets\_CompletedAssets\MobileInput\Scripts\Joystick.cs" />
      <Compile Include="Assets\_CompletedAssets\MobileInput\Scripts\MobileControlRig.cs" />
