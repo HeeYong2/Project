@@ -1,0 +1,96 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Engine", "01.Engine", "{4ACE33FF-FB53-47A9-94D8-D6E9EAE25F10}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.System", "01.System", "{C23DCD9A-7EAF-4CEA-9D5C-CAE71194562A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Utility", "02.Utility", "{ED4A2410-4321-4FB8-B423-44603D41F18B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Resource", "03.Resource", "{A5D8315F-AE99-42AD-B0F0-865A3CDFD4C2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "System", "Engine\System\Include\System.vcproj", "{DBDA636C-3804-4932-AD40-BE746776E30D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utility", "Engine\Utility\Include\Utility.vcproj", "{4D782C64-AB66-4B1B-A9E8-6FA640DD71F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "99.Headers", "99.Headers", "{ADD86A04-3A88-4878-AD8F-9C1A40B0C1DC}"
+	ProjectSection(SolutionItems) = preProject
+		Engine\Headers\Engine_Constant.h = Engine\Headers\Engine_Constant.h
+		Engine\Headers\Engine_Defines.h = Engine\Headers\Engine_Defines.h
+		Engine\Headers\Engine_Function.h = Engine\Headers\Engine_Function.h
+		Engine\Headers\Engine_Functor.h = Engine\Headers\Engine_Functor.h
+		Engine\Headers\Engine_Macro.h = Engine\Headers\Engine_Macro.h
+		Engine\Headers\Engine_Struct.h = Engine\Headers\Engine_Struct.h
+		Engine\Headers\Engine_Typedef.h = Engine\Headers\Engine_Typedef.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.Export_Function", "00.Export_Function", "{AD1C4929-ECEB-445E-A168-298922196A4A}"
+	ProjectSection(SolutionItems) = preProject
+		Engine\Export_Function\Export_Function.h = Engine\Export_Function\Export_Function.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Export_System", "01.Export_System", "{FFEB5F98-F455-4C97-8532-43F7FE4F9B2A}"
+	ProjectSection(SolutionItems) = preProject
+		Engine\Export_Function\System\Export_System.h = Engine\Export_Function\System\Export_System.h
+		Engine\Export_Function\System\Export_System.inl = Engine\Export_Function\System\Export_System.inl
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Export_Utility", "02.Export_Utility", "{4EED014B-1652-493D-BC0D-338518B39EA7}"
+	ProjectSection(SolutionItems) = preProject
+		Engine\Export_Function\Utility\Export_Utility.h = Engine\Export_Function\Utility\Export_Utility.h
+		Engine\Export_Function\Utility\Export_Utility.inl = Engine\Export_Function\Utility\Export_Utility.inl
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Export_Resource", "03.Export_Resource", "{24C0E95A-E018-487B-A222-5766FBF103E4}"
+	ProjectSection(SolutionItems) = preProject
+		Engine\Export_Function\Resource\Export_Resource.h = Engine\Export_Function\Resource\Export_Resource.h
+		Engine\Export_Function\Resource\Export_Resource.inl = Engine\Export_Function\Resource\Export_Resource.inl
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Resource", "Engine\Resource\Include\Resource.vcproj", "{2FDAED65-15B4-4442-A72E-F871CA1B0828}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.Tool", "00.Tool", "{665D19EE-63F2-4856-8B11-68359D8C54C5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tool", "Tool\Include\Tool.vcproj", "{8033C995-2C39-44F7-9BDF-6F60A93E7F6C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBDA636C-3804-4932-AD40-BE746776E30D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DBDA636C-3804-4932-AD40-BE746776E30D}.Debug|Win32.Build.0 = Debug|Win32
+		{DBDA636C-3804-4932-AD40-BE746776E30D}.Release|Win32.ActiveCfg = Release|Win32
+		{DBDA636C-3804-4932-AD40-BE746776E30D}.Release|Win32.Build.0 = Release|Win32
+		{4D782C64-AB66-4B1B-A9E8-6FA640DD71F0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4D782C64-AB66-4B1B-A9E8-6FA640DD71F0}.Debug|Win32.Build.0 = Debug|Win32
+		{4D782C64-AB66-4B1B-A9E8-6FA640DD71F0}.Release|Win32.ActiveCfg = Release|Win32
+		{4D782C64-AB66-4B1B-A9E8-6FA640DD71F0}.Release|Win32.Build.0 = Release|Win32
+		{2FDAED65-15B4-4442-A72E-F871CA1B0828}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2FDAED65-15B4-4442-A72E-F871CA1B0828}.Debug|Win32.Build.0 = Debug|Win32
+		{2FDAED65-15B4-4442-A72E-F871CA1B0828}.Release|Win32.ActiveCfg = Release|Win32
+		{2FDAED65-15B4-4442-A72E-F871CA1B0828}.Release|Win32.Build.0 = Release|Win32
+		{8033C995-2C39-44F7-9BDF-6F60A93E7F6C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8033C995-2C39-44F7-9BDF-6F60A93E7F6C}.Debug|Win32.Build.0 = Debug|Win32
+		{8033C995-2C39-44F7-9BDF-6F60A93E7F6C}.Release|Win32.ActiveCfg = Release|Win32
+		{8033C995-2C39-44F7-9BDF-6F60A93E7F6C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C23DCD9A-7EAF-4CEA-9D5C-CAE71194562A} = {4ACE33FF-FB53-47A9-94D8-D6E9EAE25F10}
+		{ED4A2410-4321-4FB8-B423-44603D41F18B} = {4ACE33FF-FB53-47A9-94D8-D6E9EAE25F10}
+		{A5D8315F-AE99-42AD-B0F0-865A3CDFD4C2} = {4ACE33FF-FB53-47A9-94D8-D6E9EAE25F10}
+		{ADD86A04-3A88-4878-AD8F-9C1A40B0C1DC} = {4ACE33FF-FB53-47A9-94D8-D6E9EAE25F10}
+		{AD1C4929-ECEB-445E-A168-298922196A4A} = {4ACE33FF-FB53-47A9-94D8-D6E9EAE25F10}
+		{DBDA636C-3804-4932-AD40-BE746776E30D} = {C23DCD9A-7EAF-4CEA-9D5C-CAE71194562A}
+		{4D782C64-AB66-4B1B-A9E8-6FA640DD71F0} = {ED4A2410-4321-4FB8-B423-44603D41F18B}
+		{2FDAED65-15B4-4442-A72E-F871CA1B0828} = {A5D8315F-AE99-42AD-B0F0-865A3CDFD4C2}
+		{FFEB5F98-F455-4C97-8532-43F7FE4F9B2A} = {AD1C4929-ECEB-445E-A168-298922196A4A}
+		{4EED014B-1652-493D-BC0D-338518B39EA7} = {AD1C4929-ECEB-445E-A168-298922196A4A}
+		{24C0E95A-E018-487B-A222-5766FBF103E4} = {AD1C4929-ECEB-445E-A168-298922196A4A}
+		{8033C995-2C39-44F7-9BDF-6F60A93E7F6C} = {665D19EE-63F2-4856-8B11-68359D8C54C5}
+	EndGlobalSection
+EndGlobal

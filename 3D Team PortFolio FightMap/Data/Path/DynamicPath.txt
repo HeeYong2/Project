@@ -1,0 +1,2 @@
+Bird.x|Brid|..\Bin\Resource\DynamicMesh\Object\Animal\Bird\
+Tree7.X|Tree7|..\Bin\Resource\Mesh\Object\Tree\Tree7\
