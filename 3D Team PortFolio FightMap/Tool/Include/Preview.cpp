@@ -40,7 +40,7 @@ BOOL CPreview::OnInitDialog()
 	m_ObjectView = new CObjectView;
 
 	m_ObjectView->Create(NULL , L"ObjectView" , WS_CHILD | WS_BORDER | WS_VISIBLE
-		, CRect(10 , 10 , 300 , 300) , this , 0);
+		, CRect(10 , 10 , 400 , 350) , this , 0);
 
 	m_ObjectView->OnInitialUpdate();
 	return TRUE;  // return TRUE unless you set the focus to a control

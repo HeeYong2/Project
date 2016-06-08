@@ -5,6 +5,7 @@
 #include "Tool.h"
 #include "AnimationView.h"
 #include "Export_Function.h"
+#include "DynamicMesh.h"
 
 // CAnimationView
 
@@ -136,6 +137,8 @@ HRESULT	CAnimationView::AddComponent(TCHAR*		szName)
 	pComponent = m_pBufferCom = Engine::Clone_Resource(RESOURCE_STATIC, L"RcTex");
 	if(NULL == pComponent)
 		return E_FAIL;
+
+	((Engine::CDynamicMesh*)m_pMeshCom);
 	return S_OK;
 }
 
