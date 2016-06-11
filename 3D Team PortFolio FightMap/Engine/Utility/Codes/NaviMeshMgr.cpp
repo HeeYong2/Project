@@ -209,7 +209,10 @@ void CNaviMeshMgr::Release(void)
 void CNaviMeshMgr::CheckDelete(_int iSelect)
 {
 	if(iSelect == 0)
-		m_vecNaviMesh.pop_back();
+	{
+		if(!m_vecNaviMesh.empty())
+			m_vecNaviMesh.pop_back();
+	}
 	else
 	{
 		Release();		

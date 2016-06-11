@@ -1,2 +1,13 @@
-Bird.x|Brid|..\Bin\Resource\DynamicMesh\Object\Animal\Bird\
-Tree7.X|Tree7|..\Bin\Resource\Mesh\Object\Tree\Tree7\
+Bird.x|Bird|..\Bin\Resource\DynamicMesh\Object\Animal\Bird\
+Deer.x|Deer|..\Bin\Resource\DynamicMesh\Object\Animal\Deer\
+Gazelle.x|Gazelle|..\Bin\Resource\DynamicMesh\Object\Animal\Gazelle\
+Hyena.x|Hyena|..\Bin\Resource\DynamicMesh\Object\Animal\Hyena\
+Lion.x|Lion|..\Bin\Resource\DynamicMesh\Object\Animal\Lion\
+Penguin.x|Penguin|..\Bin\Resource\DynamicMesh\Object\Animal\Penguin\
+Stag.x|Stag|..\Bin\Resource\DynamicMesh\Object\Animal\Stag\
+Band.x|Band|..\Bin\Resource\DynamicMesh\Object\Band\
+Eagle.x|Eagle|..\Bin\Resource\DynamicMesh\Object\Eagle\
+BloodExplosion.x|Effect|..\Bin\Resource\DynamicMesh\Object\Effect\
+Player.x|Player|..\Bin\Resource\DynamicMesh\Object\Player\
+StagO.x|sylva|..\Bin\Resource\DynamicMesh\Object\sylva\
+Gun.x|weapon|..\Bin\Resource\DynamicMesh\Object\weapon\

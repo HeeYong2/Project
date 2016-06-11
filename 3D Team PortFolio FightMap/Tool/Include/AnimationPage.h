@@ -34,6 +34,7 @@ public:
 	CAnimationView*			m_pAnimationView;
 	CString					m_strSelectName;
 	CListBox				m_ListBox;
+	CListBox				m_AniList;
 	CComboBox				m_ObjectType;
 	_int					m_iSelectComboNum;						//콤보박스 중 어떤타입을 선택했는지
 	_bool					m_isOk;
@@ -62,4 +63,5 @@ public:
 	void	Save_MeshPath(const TCHAR* pSavetxtPath , PATHLIST& rPathList);
 
 
+	afx_msg void OnLbnSelchange_AniList();
 };

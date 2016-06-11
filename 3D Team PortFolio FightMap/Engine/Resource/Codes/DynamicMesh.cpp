@@ -32,6 +32,13 @@ const _matrix* CDynamicMesh::GetFrameMatrix(const char* pFrameName)
 
 	return &(pFrame->CombinedTransformMatrix);
 }
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+_uint Engine::CDynamicMesh::GetAniMaxCnt(void)
+{
+	return m_pAniCtrler->m_iMaxAniSet;
+}
+
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 void CDynamicMesh::SetAnimationSet(_uint iAniIdx)
 {

@@ -25,6 +25,7 @@ namespace Engine
 	public:
 		_bool	GetEndPeriod(void);
 		const _matrix*	GetFrameMatrix(const char*	pFrameName);
+		_uint GetAniMaxCnt(void);
 
 	public: // Setter
 		void SetAnimationSet(_uint iAniIdx);

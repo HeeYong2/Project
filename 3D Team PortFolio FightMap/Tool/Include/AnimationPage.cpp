@@ -8,6 +8,7 @@
 #include "FileInfo.h"
 #include "Export_Function.h"
 
+#include "DynamicMesh.h"
 
 // CAnimationView 대화 상자입니다.
 
@@ -28,12 +29,14 @@ void CAnimationPage::DoDataExchange(CDataExchange* pDX)
 	CPropertyPage::DoDataExchange(pDX);
 	DDX_Control(pDX, IDC_LIST1, m_ListBox);
 	DDX_Control(pDX, IDC_COMBO1, m_ObjectType);
+	DDX_Control(pDX, IDC_LIST2, m_AniList);
 }
 
 
 BEGIN_MESSAGE_MAP(CAnimationPage, CPropertyPage)
 	ON_LBN_SELCHANGE(IDC_LIST1, &CAnimationPage::OnLbnSelchangeList)
 	ON_CBN_SELCHANGE(IDC_COMBO1, &CAnimationPage::OnCbnSelchangeObjectType)
+	ON_LBN_SELCHANGE(IDC_LIST2, &CAnimationPage::OnLbnSelchange_AniList)
 END_MESSAGE_MAP()
 
 
@@ -76,8 +79,8 @@ void CAnimationPage::OnLbnSelchangeList()
 	TCHAR	szTemp[MAX_PATH];
 	lstrcpy(szTemp , m_strSelectName);
 	
-	m_pAnimationView->SetName(szTemp);
-
+	m_pAnimationView->SetName(szTemp, &m_AniList);
+	m_pAnimationView->AddComponent(szTemp);
 	UpdateData(FALSE);
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 }
@@ -209,4 +212,16 @@ void CAnimationPage::LoadMesh(const TCHAR* pMeshTag, const TCHAR* pFullPath ,con
 		::msg_box("Ready_Mesh FAILED");
 		return;
 	}
+}
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------
+void CAnimationPage::OnLbnSelchange_AniList()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+
+	int iSelNum = m_AniList.GetCurSel();
+	if(-1 >= iSelNum)
+		return;
+
+	((Engine::CDynamicMesh*)m_pAnimationView->m_pMeshCom)->SetAnimationSet(iSelNum);
 }

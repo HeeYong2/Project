@@ -43,7 +43,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	virtual void OnInitialUpdate();
-	void SetName(TCHAR* szpName);
+	void SetName(TCHAR* szpName, CListBox* pListBox);
 
 
 
