@@ -50,10 +50,8 @@ private:
 
 private:
 	_bool									m_isPass;
-	_bool									m_isOk;
 	TCHAR									m_szName[MAX_PATH];
 	Engine::CComponent*						m_pMeshCom;
-	Engine::CComponent*						m_pBufferCom;
 	Engine::CTransform*						m_pInfo;
 
 private:
@@ -69,4 +67,6 @@ public:
 private:
 	void Release(void);
 
+public:
+	afx_msg int OnMouseActivate(CWnd* pDesktopWnd, UINT nHitTest, UINT message);
 };

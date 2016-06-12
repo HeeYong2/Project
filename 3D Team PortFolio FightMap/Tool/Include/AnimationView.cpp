@@ -14,7 +14,6 @@ IMPLEMENT_DYNCREATE(CAnimationView, CView)
 CAnimationView::CAnimationView()
 {
 	D3DXMatrixIdentity(&m_matWorld);
-	m_isOk = false;
 	m_isPass = false;
 	m_pMeshCom = NULL;
 }
@@ -100,7 +99,7 @@ void CAnimationView::Render(void)
 	if(NULL != m_pMeshCom)
 	{
 		Engine::SetRenderState(D3DRS_CULLMODE , D3DCULL_NONE);
-		((Engine::CDynamicMesh*)m_pMeshCom)->FrameMove(0.0015);
+		((Engine::CDynamicMesh*)m_pMeshCom)->FrameMove(0.0015f);
 		((Engine::CMesh*)m_pMeshCom)->Render(Engine::GetGraphicDev(), &m_pInfo->m_matWorld);
 	}
 
@@ -148,30 +147,40 @@ void CAnimationView::SetName(TCHAR* szpName, CListBox* pListBox)
 {
 	TCHAR	szTemp[MAX_PATH] = L"";
 
-	if(!lstrcmp(szTemp , szpName))		//두 문자열이 같으면 0을 반환
-		return;
-	else
+	if(lstrcmp(szTemp , szpName))
 	{
 		lstrcpy(m_szName ,szpName);
 		AddComponent(szpName);
 
-
 		pListBox->ResetContent();
 		_uint iMaxNum = ((Engine::CDynamicMesh*)m_pMeshCom)->GetAniMaxCnt();
 
+		CString Tempstr;					// 숫자 - 변경 중
 
 		for(_uint i = 0; i < iMaxNum; ++i)
 		{
-			CString Tempstr;					// 숫자 - 변경 중
-			Tempstr.Format(_T("%d"), i);
+			if(i == 0)
+				Tempstr = "DEATH";
+			else if(i == 1)
+				Tempstr = "RUN";
+			else if(i == 2)
+				Tempstr = "WALK";
+			else if(i == 3)
+				Tempstr = "STAND";
+			else if(i == 4)
+				Tempstr = "ATTACK";
+			else
+				Tempstr.Format(_T("%d") , i);
+
 			pListBox->AddString(Tempstr);
 		}
 	}
+	//DEATH ,RUN , WALK , STAND , ATTACK
 }
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
 
 void CAnimationView::Release(void)
 {
-	if(!m_pBufferCom)
-		Engine::safe_delete(m_pBufferCom);
+	if(!m_pMeshCom)
+		Engine::safe_delete(m_pMeshCom);
 }

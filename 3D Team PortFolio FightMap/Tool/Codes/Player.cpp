@@ -21,9 +21,10 @@ HRESULT CPlayer::Initialize(void)
 	if(FAILED(AddComponent()))
 		return E_FAIL;
 //서브터레인위치
-	m_pInfo->m_vPosition = _vec3(146.f , 4.8f , 261.f);
-//	m_pInfo->m_vPosition = _vec3(375.f , 1.f , 395.f);
+	//m_pInfo->m_vPosition = _vec3(146.f , 4.8f , 261.f);
+	//m_pInfo->m_vPosition = _vec3(375.f , 1.f , 395.f);
 
+	m_pInfo->m_vPosition = _vec3(5.f , 1.f , 5.f);
 	m_pInfo->m_fAngle[m_pInfo->ANGLE_Y] = D3DXToRadian(-45.f);
 	m_pInfo->m_vDirection = _vec3(0.f , 1.f , 0.f);
 	m_pInfo->m_vScale = _vec3(0.05f , 0.05f , 0.05f );

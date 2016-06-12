@@ -28,7 +28,6 @@ public:
 
 public:
 	Engine::CComponent*						m_pMeshCom;
-	Engine::CComponent*						m_pBufferCom;
 	Engine::CTransform*						m_pInfo;
 
 public:
@@ -50,7 +49,6 @@ public:
 public:
 	_matrix									m_matWorld;
 	TCHAR									m_szName[MAX_PATH];
-	_bool									m_isOk;
 	_bool									m_isPass;
 	_vec3									m_vScale;
 	_vec3									m_vPosition;
@@ -58,5 +56,3 @@ public:
 	_float									m_fAngle[ANGLE_END];
 
 };
-
-

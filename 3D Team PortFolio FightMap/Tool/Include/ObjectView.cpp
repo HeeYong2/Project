@@ -5,6 +5,7 @@
 #include "Tool.h"
 #include "ObjectView.h"
 #include "Export_Function.h"
+#include "StaticMesh.h"
 
 
 // CObjectView
@@ -15,14 +16,13 @@ CObjectView::CObjectView()
 : m_iSizeX(300)
 , m_iSizeY(300)
 , m_isPass(false)
-, m_isOk(false)
 {
 	ZeroMemory(m_szName , sizeof(TCHAR) * MAX_PATH);
 	m_vScale = _vec3(0.01f, 0.01f, 0.01f);
 	ZeroMemory(&m_vPosition, sizeof(_vec3));
 	ZeroMemory(m_fAngle, sizeof(_float ) * ANGLE_END);
 	memcpy(&m_vDirection ,  g_vLook , sizeof(_vec3));
-
+	m_pMeshCom = NULL;
 	D3DXMatrixIdentity(&m_matWorld);
 }
 
@@ -32,6 +32,7 @@ CObjectView::~CObjectView()
 }
 
 BEGIN_MESSAGE_MAP(CObjectView, CView)
+	ON_WM_MOUSEACTIVATE()
 END_MESSAGE_MAP()
 
 
@@ -82,31 +83,42 @@ void CObjectView::OnInitialUpdate()
 
 void CObjectView::Render(void)
 {
-	if(m_isOk == false)
-		return;
-	
-	AddComponent(m_szName);
-	m_isOk = false;
-		
 	Engine::GetGraphicDev()->Clear(0 , NULL , D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER | D3DCLEAR_STENCIL ,D3DCOLOR_ARGB(255 , 163 , 204 , 163) , 1.f , 0);
 	Engine::GetGraphicDev()->BeginScene();
 
- 	_matrix matView , matProj , matOriView;
- 
-  	Engine::GetGraphicDev() ->GetTransform(D3DTS_VIEW , &matView);
-  	matOriView = matView;
-  	D3DXMatrixInverse(&matView , NULL , &matView);
- 	D3DXMatrixLookAtLH(&matView, &_vec3(0.f, 10.f, -60.f), &_vec3(0.f, 0.0f, 0.0f), &_vec3(0.f, 1.f, 0.f));
-	//Projection도 해야됌
- 	Engine::GetGraphicDev() ->SetTransform(D3DTS_VIEW , &matView);
- 	((Engine::CMesh*)m_pMeshCom)->Render(Engine::GetGraphicDev() , &m_pInfo->m_matWorld );
- 	((Engine::CVIBuffer*)m_pBufferCom)->Render(Engine::GetGraphicDev());
+ 	
+	if(NULL != m_pMeshCom)
+	{
+		_matrix matView , matProj , matOriView;
+	
+		HRESULT hr = 0;
+		LPD3DXMESH	pMesh = ((Engine::CStaticMesh*)m_pMeshCom)->GetMesh();
+		float fRadius = 0 , fBig;
+		_vec3					vMax , vMin, vCenter;	//max = 오른쪽 위  min = 왼쪽 아래
 
+		_vec3*	vPos = NULL;
+		pMesh->LockVertexBuffer(0 ,(void**)&vPos);
+		hr = D3DXComputeBoundingBox(vPos , pMesh->GetNumVertices() , D3DXGetFVFVertexSize(pMesh->GetFVF()) , &vMin, &vMax);
+
+		fBig = max(m_pInfo->m_vScale.z, max(m_pInfo->m_vScale.x , m_pInfo->m_vScale.y));  //가장 큰 값을 넣자
+
+  		//Engine::GetGraphicDev() ->GetTransform(D3DTS_VIEW , &matView);
+  		//matOriView = matView;
+  		//D3DXMatrixInverse(&matView , NULL , &matView);
+		float fy = vMax.y - vMin.y;
+		float fz = vMax.z - vMin.z;
+ 		D3DXMatrixLookAtLH(&matView, &_vec3(0.f, fy * 1.5f, -fz * 2), &_vec3(0.f, fy / 2.f, 0.0f), &_vec3(0.f, 1.f, 0.f));
+		//Projection도 해야됌
+ 		Engine::GetGraphicDev() ->SetTransform(D3DTS_VIEW , &matView);
+		((Engine::CMesh*)m_pMeshCom)->Render(Engine::GetGraphicDev() , &m_pInfo->m_matWorld );
+		pMesh->UnlockVertexBuffer();
+	}
+		
 
 	Engine::GetGraphicDev()->EndScene();
 	Engine::GetGraphicDev()->Present(NULL , NULL , m_hWnd, NULL);
 
-	Engine::GetGraphicDev() ->SetTransform(D3DTS_VIEW , &matOriView);
+	//Engine::GetGraphicDev() ->SetTransform(D3DTS_VIEW , &matOriView);
 }
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -139,11 +151,6 @@ HRESULT CObjectView::AddComponent(TCHAR* szName)
 	if(NULL == pComponent)
 		return E_FAIL;
 
-	// For.Buffer ===============================================================================================================================================================================================================================================================================================================================================
-	pComponent = m_pBufferCom = Engine::Clone_Resource(RESOURCE_STATIC, L"RcTex");
-	if(NULL == pComponent)
-		return E_FAIL;
-
 	return S_OK;
 }
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -152,18 +159,24 @@ void CObjectView::SetName(TCHAR* szpName)
 {
 	TCHAR	szTemp[MAX_PATH] = L"";
 
-	if(!lstrcmp(szTemp , szpName))		//두 문자열이 같으면 0을 반환
-		m_isOk = false;
-	else
+	if(lstrcmp(szTemp , szpName))
 	{
 		lstrcpy(m_szName ,szpName);
-		m_isOk = true;
+		AddComponent(szpName);
  	}
+	Invalidate();
 }
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
 
 void CObjectView::Release(void)
 {
-	Engine::safe_delete(m_pBufferCom);
-	Engine::safe_delete(m_pMeshCom);
+	if(!m_pMeshCom)
+		Engine::safe_delete(m_pMeshCom);
+}
+int CObjectView::OnMouseActivate(CWnd* pDesktopWnd, UINT nHitTest, UINT message)
+{
+	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
+
+	//return CView::OnMouseActivate(pDesktopWnd, nHitTest, message);
+	return MA_ACTIVATE;
 }
