@@ -47,13 +47,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Export_Resource", "03.Ex
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.Tool", "00.Tool", "{665D19EE-63F2-4856-8B11-68359D8C54C5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "System", "Engine\System\Include\System.vcxproj", "{DBDA636C-3804-4932-AD40-BE746776E30D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "System", "Engine\System\Include\System.vcproj", "{DBDA636C-3804-4932-AD40-BE746776E30D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utility", "Engine\Utility\Include\Utility.vcxproj", "{4D782C64-AB66-4B1B-A9E8-6FA640DD71F0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utility", "Engine\Utility\Include\Utility.vcproj", "{4D782C64-AB66-4B1B-A9E8-6FA640DD71F0}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Resource", "Engine\Resource\Include\Resource.vcxproj", "{2FDAED65-15B4-4442-A72E-F871CA1B0828}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Resource", "Engine\Resource\Include\Resource.vcproj", "{2FDAED65-15B4-4442-A72E-F871CA1B0828}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tool", "Tool\Include\Tool.vcxproj", "{8033C995-2C39-44F7-9BDF-6F60A93E7F6C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tool", "Tool\Include\Tool.vcproj", "{8033C995-2C39-44F7-9BDF-6F60A93E7F6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

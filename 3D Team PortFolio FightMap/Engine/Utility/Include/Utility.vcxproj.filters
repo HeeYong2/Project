@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="00.Management">
+      <UniqueIdentifier>{12cac574-e5c3-449a-9d5a-1b618311db19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99.SuperClass">
+      <UniqueIdentifier>{5634988a-70a1-4083-ad02-055f2274324d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99.SuperClass\00.Scene">
+      <UniqueIdentifier>{8d329880-a1bf-4e42-bb1f-a539668fbe2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99.SuperClass\00.Scene\Layer">
+      <UniqueIdentifier>{c5ec76d4-bc38-4a31-9968-855600d4108d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99.SuperClass\01.GameObject">
+      <UniqueIdentifier>{784695d2-93a4-46fd-89d7-11899a6bc1bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99.SuperClass\02.Component">
+      <UniqueIdentifier>{ee7c3335-e946-4506-96f4-eca1922560ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99.SuperClass\02.Component\01.Transform">
+      <UniqueIdentifier>{32809989-0ed0-4522-ae38-0b837218b7d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99.SuperClass\03.Camera">
+      <UniqueIdentifier>{e6500f3f-2e77-486b-ba02-a24f12615bfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99.SuperClass\04.Base">
+      <UniqueIdentifier>{cafe64f0-e4dd-4bf0-8885-2e0e11a008e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99.SuperClass\05.RenderTarget">
+      <UniqueIdentifier>{1aad8272-e008-4f25-bcb3-5b88b14753d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Renderer">
+      <UniqueIdentifier>{cf56db46-a5b2-4b7c-be7b-a7701318caff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Optimize">
+      <UniqueIdentifier>{bb65f98c-2da6-48d9-bdf1-5c434255707a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Optimize\01.Frustum">
+      <UniqueIdentifier>{c85540b2-4bd4-4729-b1bc-3ffbe0783d66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Optimize\02.QuadTree">
+      <UniqueIdentifier>{1436bc4a-a423-4d1c-9eaa-faa4d7b3cd7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.LightMgr">
+      <UniqueIdentifier>{e32d7d5a-d29a-475c-955d-cae59d4d5952}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.LightMgr\01.Light">
+      <UniqueIdentifier>{6263d939-fb41-451a-ac7a-738e178a851f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04.NaviMesh">
+      <UniqueIdentifier>{892413af-1993-4771-bad7-827698231fd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04.NaviMesh\NaviMesh">
+      <UniqueIdentifier>{a6695461-aef0-4ccc-9a0c-d10575237e5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04.NaviMesh\NaviMesh\Line">
+      <UniqueIdentifier>{5e545e74-f439-4f1f-b7c0-2ecb1e0fa7ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05.ShaderMgr">
+      <UniqueIdentifier>{1044613e-3865-40f6-814b-bd9151afe2e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05.ShaderMgr\Files">
+      <UniqueIdentifier>{2294b4aa-883b-4ef6-80aa-2b10f3880d80}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\codes\Management.cpp">
+      <Filter>00.Management</Filter>
+    </ClCompile>
+    <ClCompile Include="..\codes\Scene.cpp">
+      <Filter>99.SuperClass\00.Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\codes\Layer.cpp">
+      <Filter>99.SuperClass\00.Scene\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\codes\GameObject.cpp">
+      <Filter>99.SuperClass\01.GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\codes\Component.cpp">
+      <Filter>99.SuperClass\02.Component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\codes\Transform.cpp">
+      <Filter>99.SuperClass\02.Component\01.Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Camera.cpp">
+      <Filter>99.SuperClass\03.Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Base.cpp">
+      <Filter>99.SuperClass\04.Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\RenderTarget.cpp">
+      <Filter>99.SuperClass\05.RenderTarget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\RenderTargetMgr.cpp">
+      <Filter>99.SuperClass\05.RenderTarget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Renderer.cpp">
+      <Filter>01.Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Frustum.cpp">
+      <Filter>02.Optimize\01.Frustum</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\QuadTree.cpp">
+      <Filter>02.Optimize\02.QuadTree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\LightMgr.cpp">
+      <Filter>03.LightMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Light.cpp">
+      <Filter>03.LightMgr\01.Light</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\NaviMeshMgr.cpp">
+      <Filter>04.NaviMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\NaviMesh.cpp">
+      <Filter>04.NaviMesh\NaviMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Line2D.cpp">
+      <Filter>04.NaviMesh\NaviMesh\Line</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Shader.cpp">
+      <Filter>05.ShaderMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\ShaderMgr.cpp">
+      <Filter>05.ShaderMgr</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\codes\Management.h">
+      <Filter>00.Management</Filter>
+    </ClInclude>
+    <ClInclude Include="..\codes\Scene.h">
+      <Filter>99.SuperClass\00.Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\codes\Layer.h">
+      <Filter>99.SuperClass\00.Scene\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\codes\GameObject.h">
+      <Filter>99.SuperClass\01.GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\codes\Component.h">
+      <Filter>99.SuperClass\02.Component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\codes\Transform.h">
+      <Filter>99.SuperClass\02.Component\01.Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\Camera.h">
+      <Filter>99.SuperClass\03.Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\Base.h">
+      <Filter>99.SuperClass\04.Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\RenderTarget.h">
+      <Filter>99.SuperClass\05.RenderTarget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\RenderTargetMgr.h">
+      <Filter>99.SuperClass\05.RenderTarget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\Renderer.h">
+      <Filter>01.Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\Frustum.h">
+      <Filter>02.Optimize\01.Frustum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\QuadTree.h">
+      <Filter>02.Optimize\02.QuadTree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\LightMgr.h">
+      <Filter>03.LightMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\Light.h">
+      <Filter>03.LightMgr\01.Light</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\NaviMeshMgr.h">
+      <Filter>04.NaviMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\NaviMesh.h">
+      <Filter>04.NaviMesh\NaviMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\Line2D.h">
+      <Filter>04.NaviMesh\NaviMesh\Line</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\Shader.h">
+      <Filter>05.ShaderMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\ShaderMgr.h">
+      <Filter>05.ShaderMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Headers\Shader_Light.hpp">
+      <Filter>05.ShaderMgr\Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\codes\Management.inl">
+      <Filter>00.Management</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\00.MainFrm">
+      <UniqueIdentifier>{5dc0c7f2-b74f-4ec3-8a71-44a74b206c66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.Dialog">
+      <UniqueIdentifier>{2bbe109a-937d-4c87-ae9a-ed4d7347a622}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.Dialog\01.MyForm">
+      <UniqueIdentifier>{20216014-6439-40eb-bd98-5ff9e2b56a44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.Dialog\02.Sheet">
+      <UniqueIdentifier>{fed60a19-ed2d-4e25-b97a-00f1f8917132}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.Dialog\02.Sheet\01.MapPage">
+      <UniqueIdentifier>{83aac1ef-0786-4f80-b903-91fa57a1535e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.Dialog\02.Sheet\02.ObjectPage">
+      <UniqueIdentifier>{73ffe777-a213-46fc-8ac9-a88bd744ac86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.Dialog\02.Sheet\03.NaviPage">
+      <UniqueIdentifier>{56da8e08-bb52-489c-b1af-0987de9b17d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.Dialog\02.Sheet\04.Animation">
+      <UniqueIdentifier>{46e378cb-afb3-40d1-8ff6-2abf1e1e772c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.Dialog\03.FileInfo">
+      <UniqueIdentifier>{53ef89e9-ef80-4f43-a339-eadcde26c071}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\88.Headers">
+      <UniqueIdentifier>{375730f2-a566-4bf1-9ce6-f2ec05fcb337}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\99.Default">
+      <UniqueIdentifier>{96a74e04-6f82-4365-8cf8-00625aac2a44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.Instance">
+      <UniqueIdentifier>{678b1ebf-014d-4da0-95c2-28179df2b4e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.Instance\01.Terrain">
+      <UniqueIdentifier>{50632641-0f33-4787-9489-5e2877380b0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.Instance\03.Object">
+      <UniqueIdentifier>{72fa6f13-c8a3-4668-a110-4fad12b47096}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.Instance\05.DynamicCamera">
+      <UniqueIdentifier>{191d0f39-8f4a-4288-b36c-7934b85424dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.Instance\04.Mouse">
+      <UniqueIdentifier>{ad411a02-753a-4362-8058-72177e5ee7de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.Instance\02.Terrain2">
+      <UniqueIdentifier>{842ed544-5a14-4ad9-b7f5-87d6f332b872}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.Instance\06.Flag">
+      <UniqueIdentifier>{5c5319f7-d583-45f9-af8c-8c51724ba964}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.Instance\07.SkyBox">
+      <UniqueIdentifier>{c68c984a-6558-452b-87db-7bec9d05e21b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.Instance\08.Player">
+      <UniqueIdentifier>{386a1ef8-53a4-440e-b9a6-440cd4cee8a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.Instance\09.StaticCamera">
+      <UniqueIdentifier>{d7e0ce7b-5b43-4cd8-881e-2a48178b1482}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.Instance\10.Manager">
+      <UniqueIdentifier>{9d2fbeae-33c9-4954-a3e7-0f62697bd44f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.Instance\11.Water">
+      <UniqueIdentifier>{8aefce75-50b0-4fe0-8ed0-822bebdb7d6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.Instance\12.Enemy">
+      <UniqueIdentifier>{2f88c192-b063-44f6-b6af-a750fb6e1e80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.MainView">
+      <UniqueIdentifier>{79e6e535-5a3f-4d47-aea4-0122e777672f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.MainView\01.ToolView">
+      <UniqueIdentifier>{79552393-1f0a-46a6-b460-c6ed39a2e6d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.MainView\02.Preview">
+      <UniqueIdentifier>{27427148-c99d-4dfc-9a12-7ca82e1af3a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.MainView\02.Preview\01.ObjectView">
+      <UniqueIdentifier>{1857a450-2137-485c-b2ab-5d95afb6d77d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>소스 파일\00.MainFrm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\MyForm.cpp">
+      <Filter>소스 파일\02.Dialog\01.MyForm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Sheet.cpp">
+      <Filter>소스 파일\02.Dialog\02.Sheet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\MapPage.cpp">
+      <Filter>소스 파일\02.Dialog\02.Sheet\01.MapPage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\ObjectPage.cpp">
+      <Filter>소스 파일\02.Dialog\02.Sheet\02.ObjectPage</Filter>
+    </ClCompile>
+    <ClCompile Include="NaviMeshPage.cpp">
+      <Filter>소스 파일\02.Dialog\02.Sheet\03.NaviPage</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationPage.cpp">
+      <Filter>소스 파일\02.Dialog\02.Sheet\04.Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationView.cpp">
+      <Filter>소스 파일\02.Dialog\02.Sheet\04.Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\FileInfo.cpp">
+      <Filter>소스 파일\02.Dialog\03.FileInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일\99.Default</Filter>
+    </ClCompile>
+    <ClCompile Include="Tool.cpp">
+      <Filter>소스 파일\99.Default</Filter>
+    </ClCompile>
+    <ClCompile Include="ToolDoc.cpp">
+      <Filter>소스 파일\99.Default</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Terrain.cpp">
+      <Filter>소스 파일\03.Instance\01.Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\ObjectTool.cpp">
+      <Filter>소스 파일\03.Instance\03.Object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\DynamicCamera.cpp">
+      <Filter>소스 파일\03.Instance\05.DynamicCamera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Mouse.cpp">
+      <Filter>소스 파일\03.Instance\04.Mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Terrain2.cpp">
+      <Filter>소스 파일\03.Instance\02.Terrain2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\NaviFlag.cpp">
+      <Filter>소스 파일\03.Instance\06.Flag</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\SkyBox.cpp">
+      <Filter>소스 파일\03.Instance\07.SkyBox</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Player.cpp">
+      <Filter>소스 파일\03.Instance\08.Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\StaticCamera.cpp">
+      <Filter>소스 파일\03.Instance\09.StaticCamera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Water.cpp">
+      <Filter>소스 파일\03.Instance\11.Water</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Enemy.cpp">
+      <Filter>소스 파일\03.Instance\12.Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="ToolView.cpp">
+      <Filter>소스 파일\01.MainView\01.ToolView</Filter>
+    </ClCompile>
+    <ClCompile Include="Preview.cpp">
+      <Filter>소스 파일\01.MainView\02.Preview</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectView.cpp">
+      <Filter>소스 파일\01.MainView\02.Preview\01.ObjectView</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MainFrm.h">
+      <Filter>소스 파일\00.MainFrm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\MyForm.h">
+      <Filter>소스 파일\02.Dialog\01.MyForm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\Sheet.h">
+      <Filter>소스 파일\02.Dialog\02.Sheet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\MapPage.h">
+      <Filter>소스 파일\02.Dialog\02.Sheet\01.MapPage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\ObjectPage.h">
+      <Filter>소스 파일\02.Dialog\02.Sheet\02.ObjectPage</Filter>
+    </ClInclude>
+    <ClInclude Include="NaviMeshPage.h">
+      <Filter>소스 파일\02.Dialog\02.Sheet\03.NaviPage</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationPage.h">
+      <Filter>소스 파일\02.Dialog\02.Sheet\04.Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationView.h">
+      <Filter>소스 파일\02.Dialog\02.Sheet\04.Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\FileInfo.h">
+      <Filter>소스 파일\02.Dialog\03.FileInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Tool_Constant.h">
+      <Filter>소스 파일\88.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Tool_Defines.h">
+      <Filter>소스 파일\88.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Tool_Function.h">
+      <Filter>소스 파일\88.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Tool_Macro.h">
+      <Filter>소스 파일\88.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Tool_Struct.h">
+      <Filter>소스 파일\88.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Tool_Typedef.h">
+      <Filter>소스 파일\88.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>소스 파일\99.Default</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>소스 파일\99.Default</Filter>
+    </ClInclude>
+    <ClInclude Include="Tool.h">
+      <Filter>소스 파일\99.Default</Filter>
+    </ClInclude>
+    <ClInclude Include="ToolDoc.h">
+      <Filter>소스 파일\99.Default</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\Terrain.h">
+      <Filter>소스 파일\03.Instance\01.Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\ObjectTool.h">
+      <Filter>소스 파일\03.Instance\03.Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\DynamicCamera.h">
+      <Filter>소스 파일\03.Instance\05.DynamicCamera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\Mouse.h">
+      <Filter>소스 파일\03.Instance\04.Mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\Terrain2.h">
+      <Filter>소스 파일\03.Instance\02.Terrain2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\NaviFlag.h">
+      <Filter>소스 파일\03.Instance\06.Flag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\SkyBox.h">
+      <Filter>소스 파일\03.Instance\07.SkyBox</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\Player.h">
+      <Filter>소스 파일\03.Instance\08.Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\StaticCamera.h">
+      <Filter>소스 파일\03.Instance\09.StaticCamera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Bin\EffectFiles\Shader_Base.hpp">
+      <Filter>소스 파일\03.Instance\10.Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Bin\EffectFiles\Shader_Default.hpp">
+      <Filter>소스 파일\03.Instance\10.Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Bin\EffectFiles\Shader_Sky.hpp">
+      <Filter>소스 파일\03.Instance\10.Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Bin\EffectFiles\Shader_Terrain.hpp">
+      <Filter>소스 파일\03.Instance\10.Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Bin\EffectFiles\Shader_Water.hpp">
+      <Filter>소스 파일\03.Instance\10.Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\Water.h">
+      <Filter>소스 파일\03.Instance\11.Water</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Codes\Enemy.h">
+      <Filter>소스 파일\03.Instance\12.Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="ToolView.h">
+      <Filter>소스 파일\01.MainView\01.ToolView</Filter>
+    </ClInclude>
+    <ClInclude Include="Preview.h">
+      <Filter>소스 파일\01.MainView\02.Preview</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectView.h">
+      <Filter>소스 파일\01.MainView\02.Preview\01.ObjectView</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Tool.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\Toolbar.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\Toolbar256.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\ToolDoc.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="UserImages.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Tool.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Tool.rc2">
+      <Filter>리소스 파일</Filter>
+    </None>
+  </ItemGroup>
+</Project>
