@@ -6,3 +6,7 @@
 *.obj
 *.obj
 *.obj
+*.dll
+*.lib
+*.obj
+*.tlog
